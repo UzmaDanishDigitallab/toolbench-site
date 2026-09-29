@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="XBWFq57IGj9rFUByLtACDu-FAbgvlOMMOUhL3YZyk5w" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978184215354434" crossorigin="anonymous"></script>
+<title>Free Word & Character Counter Online — Count Words, Characters, Sentences</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Count words, characters, sentences and paragraphs in your text instantly. Useful for essays, captions, and character-limited fields. Free and private.">
+<meta name="keywords" content="word counter, character counter, word count online, count words free, text counter">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Uzma Danish">
+<link rel="canonical" href="https://toolbench-site.vercel.app/word-counter.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Word & Character Counter Online — Count Words, Characters, Sentences">
+<meta property="og:description" content="Count words, characters, sentences and paragraphs in your text instantly. Useful for essays, captions, and character-limited fields. Free and private.">
+<meta property="og:url" content="https://toolbench-site.vercel.app/word-counter.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Word & Character Counter Online — Count Words, Characters, Sentences">
+<meta name="twitter:description" content="Count words, characters, sentences and paragraphs in your text instantly. Useful for essays, captions, and character-limited fields. Free and private.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" style="text-decoration:none;">Tool<span>Bench</span></a>
+  </div>
+  <nav>
+    <a class="tab" href="index.html">Home</a>
+    <a class="tab" href="age-calculator.html">Age Calculator</a>
+    <a class="tab" href="image-compressor.html">Image Compressor</a>
+    <a class="tab" href="pdf-merge.html">PDF Merge</a>
+    <a class="tab active" href="word-counter.html">Word Counter</a>
+    <a class="tab" href="emi-calculator.html">EMI Calculator</a>
+    <a class="tab" href="percentage-calculator.html">Percentage Calculator</a>
+    <a class="tab" href="bmi-calculator.html">BMI Calculator</a>
+    <a class="tab" href="unit-converter.html">Unit Converter</a>
+    <a class="tab" href="qr-code-generator.html">QR Code Generator</a>
+    <a class="tab" href="ai-tools.html">Free AI Tools</a>
+    <a class="tab" href="books.html">Books</a>
+    <a class="tab" href="about.html">About Us</a>
+    <a class="tab" href="contact.html">Contact</a>
+    <a class="tab" href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <h1>Word & Character Counter</h1>
+  <p>Paste or type text below to see live counts — useful for essays, social media captions, and any field with a character limit.</p>
+</div>
+<div class="card">
+      <h2>Count your text</h2>
+      <p class="sub">Counts update as you type.</p>
+      <textarea id="wordInput" placeholder="Start typing or paste your text here..."></textarea>
+      <div class="grid-stats" style="margin-top:16px;">
+        <div class="stat"><div class="n" id="wcWords">0</div><div class="l">Words</div></div>
+        <div class="stat"><div class="n" id="wcChars">0</div><div class="l">Characters</div></div>
+        <div class="stat"><div class="n" id="wcCharsNoSpace">0</div><div class="l">Characters (no spaces)</div></div>
+        <div class="stat"><div class="n" id="wcSentences">0</div><div class="l">Sentences</div></div>
+        <div class="stat"><div class="n" id="wcParas">0</div><div class="l">Paragraphs</div></div>
+        <div class="stat"><div class="n" id="wcReadTime">0 min</div><div class="l">Reading time</div></div>
+      </div>
+</div>
+
+<div class="ad-slot">Ad space — place your Google AdSense unit here once your site is approved</div>
+</main>
+<footer>
+  <div class="inner">
+    ToolBench — free browser-based utilities. No files are uploaded to any server; every tool runs locally on your device.<br>
+    <span style="margin-top:6px; display:inline-block;">
+      <a href="mailto:uzmadanish143786@gmail.com">Contact</a> ·
+      <a href="about.html">About</a> ·
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+<script>
+const wordInput = document.getElementById('wordInput');
+wordInput.addEventListener('input', updateWordCount);
+function updateWordCount(){
+  const text = wordInput.value;
+  const trimmed = text.trim();
+  const words = trimmed.length ? trimmed.split(/\s+/).length : 0;
+  const chars = text.length;
+  const charsNoSpace = text.replace(/\s/g,'').length;
+  const sentences = trimmed.length ? (trimmed.match(/[.!?]+(\s|$)/g) || []).length || (trimmed.length?1:0) : 0;
+  const paras = trimmed.length ? trimmed.split(/\n+/).filter(p=>p.trim().length).length : 0;
+  const readMins = Math.max(1, Math.ceil(words/200));
+  document.getElementById('wcWords').textContent = words;
+  document.getElementById('wcChars').textContent = chars;
+  document.getElementById('wcCharsNoSpace').textContent = charsNoSpace;
+  document.getElementById('wcSentences').textContent = sentences;
+  document.getElementById('wcParas').textContent = paras;
+  document.getElementById('wcReadTime').textContent = (words ? readMins + ' min' : '0 min');
+}
+</script>
+</body>
+</html>

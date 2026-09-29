@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="XBWFq57IGj9rFUByLtACDu-FAbgvlOMMOUhL3YZyk5w" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978184215354434" crossorigin="anonymous"></script>
+<title>Free PDF Merge Tool Online — Combine Multiple PDFs Into One</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Merge two or more PDF files into a single document for free, in the order you choose. Runs entirely in your browser — files are never uploaded to a server.">
+<meta name="keywords" content="pdf merge, merge pdf online, combine pdf files free, join pdf, pdf merger">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Uzma Danish">
+<link rel="canonical" href="https://toolbench-site.vercel.app/pdf-merge.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free PDF Merge Tool Online — Combine Multiple PDFs Into One">
+<meta property="og:description" content="Merge two or more PDF files into a single document for free, in the order you choose. Runs entirely in your browser — files are never uploaded to a server.">
+<meta property="og:url" content="https://toolbench-site.vercel.app/pdf-merge.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free PDF Merge Tool Online — Combine Multiple PDFs Into One">
+<meta name="twitter:description" content="Merge two or more PDF files into a single document for free, in the order you choose. Runs entirely in your browser — files are never uploaded to a server.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I change the order of pages before merging?","acceptedAnswer":{"@type":"Answer","text":"Yes — the PDFs merge in the order you add them. Remove a file and re-add it to change its position."}},
+{"@type":"Question","name":"Is there a file size or page limit?","acceptedAnswer":{"@type":"Answer","text":"No hard limit is set, but very large PDFs may take a few seconds longer since everything processes in your browser."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" style="text-decoration:none;">Tool<span>Bench</span></a>
+  </div>
+  <nav>
+    <a class="tab" href="index.html">Home</a>
+    <a class="tab" href="age-calculator.html">Age Calculator</a>
+    <a class="tab" href="image-compressor.html">Image Compressor</a>
+    <a class="tab active" href="pdf-merge.html">PDF Merge</a>
+    <a class="tab" href="word-counter.html">Word Counter</a>
+    <a class="tab" href="emi-calculator.html">EMI Calculator</a>
+    <a class="tab" href="percentage-calculator.html">Percentage Calculator</a>
+    <a class="tab" href="bmi-calculator.html">BMI Calculator</a>
+    <a class="tab" href="unit-converter.html">Unit Converter</a>
+    <a class="tab" href="qr-code-generator.html">QR Code Generator</a>
+    <a class="tab" href="ai-tools.html">Free AI Tools</a>
+    <a class="tab" href="books.html">Books</a>
+    <a class="tab" href="about.html">About Us</a>
+    <a class="tab" href="contact.html">Contact</a>
+    <a class="tab" href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <h1>PDF Merge</h1>
+  <p>Combine several PDF files into one document, in whatever order you like. All merging happens locally in your browser, so your files stay private.</p>
+</div>
+<div class="card">
+      <h2>Merge PDF files</h2>
+      <p class="sub">Add two or more PDFs, then merge them into a single file.</p>
+      <div class="dropzone" id="pdfDrop" tabindex="0">
+        <strong>Click to choose PDF files</strong> or drag them here<br>Select two or more
+        <input type="file" id="pdfInput" accept="application/pdf" multiple class="hidden">
+      </div>
+      <div class="filelist" id="pdfList"></div>
+      <div style="margin-top:16px;">
+        <button class="primary" id="pdfMergeBtn" onclick="mergePdfs()" disabled>Merge PDFs</button>
+      </div>
+      <div class="result hidden" id="pdfResult">
+        <div>Your merged PDF is ready.</div>
+        <a class="dl" id="pdfDownload" download="merged.pdf">Download merged.pdf</a>
+      </div>
+</div>
+<div class="faq"><h3>Frequently asked questions</h3><div class="q">Can I change the order of pages before merging?</div><div class="a">Yes — the PDFs merge in the order you add them. Remove a file and re-add it to change its position.</div>
+<div class="q">Is there a file size or page limit?</div><div class="a">No hard limit is set, but very large PDFs may take a few seconds longer since everything processes in your browser.</div></div>
+<div class="ad-slot">Ad space — place your Google AdSense unit here once your site is approved</div>
+</main>
+<footer>
+  <div class="inner">
+    ToolBench — free browser-based utilities. No files are uploaded to any server; every tool runs locally on your device.<br>
+    <span style="margin-top:6px; display:inline-block;">
+      <a href="mailto:uzmadanish143786@gmail.com">Contact</a> ·
+      <a href="about.html">About</a> ·
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+<script>
+const pdfDrop = document.getElementById('pdfDrop');
+const pdfInput = document.getElementById('pdfInput');
+let pdfFiles = [];
+pdfDrop.addEventListener('click', ()=> pdfInput.click());
+pdfDrop.addEventListener('keydown', e=>{ if(e.key==='Enter') pdfInput.click(); });
+;['dragover','dragleave','drop'].forEach(evt=>{
+  pdfDrop.addEventListener(evt, e=>{
+    e.preventDefault();
+    pdfDrop.classList.toggle('drag', evt==='dragover');
+    if(evt==='drop' && e.dataTransfer.files.length) addPdfFiles(e.dataTransfer.files);
+  });
+});
+pdfInput.addEventListener('change', e=>{ if(e.target.files.length) addPdfFiles(e.target.files); });
+function formatBytes(bytes){
+  if(bytes < 1024) return bytes + ' B';
+  if(bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/(1024*1024)).toFixed(2) + ' MB';
+}
+function addPdfFiles(fileList){
+  Array.from(fileList).forEach(f=>{ if(f.type === 'application/pdf') pdfFiles.push(f); });
+  renderPdfList();
+}
+function renderPdfList(){
+  const list = document.getElementById('pdfList');
+  list.innerHTML = '';
+  pdfFiles.forEach((f,i)=>{
+    const row = document.createElement('div');
+    row.className = 'fileitem';
+    row.innerHTML = `<span>${i+1}. ${f.name} (${formatBytes(f.size)})</span><span class="rm" data-i="${i}">Remove</span>`;
+    row.querySelector('.rm').onclick = ()=>{ pdfFiles.splice(i,1); renderPdfList(); };
+    list.appendChild(row);
+  });
+  document.getElementById('pdfMergeBtn').disabled = pdfFiles.length < 2;
+  document.getElementById('pdfResult').classList.add('hidden');
+}
+async function mergePdfs(){
+  const { PDFDocument } = PDFLib;
+  const merged = await PDFDocument.create();
+  for(const file of pdfFiles){
+    const bytes = await file.arrayBuffer();
+    const src = await PDFDocument.load(bytes);
+    const pages = await merged.copyPages(src, src.getPageIndices());
+    pages.forEach(p => merged.addPage(p));
+  }
+  const outBytes = await merged.save();
+  const blob = new Blob([outBytes], {type:'application/pdf'});
+  const url = URL.createObjectURL(blob);
+  document.getElementById('pdfResult').classList.remove('hidden');
+  document.getElementById('pdfDownload').href = url;
+}
+</script>
+</body>
+</html>

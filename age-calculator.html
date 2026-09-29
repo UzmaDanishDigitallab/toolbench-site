@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="XBWFq57IGj9rFUByLtACDu-FAbgvlOMMOUhL3YZyk5w" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978184215354434" crossorigin="anonymous"></script>
+<title>Free Age Calculator Online — Find Exact Age in Years, Months, Days</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Calculate your exact age from your date of birth — years, months, days, total days lived, and days left until your next birthday. Free, instant, no sign-up.">
+<meta name="keywords" content="age calculator, age calculator online, calculate age from date of birth, exact age calculator, how old am i">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Uzma Danish">
+<link rel="canonical" href="https://toolbench-site.vercel.app/age-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Age Calculator Online — Find Exact Age in Years, Months, Days">
+<meta property="og:description" content="Calculate your exact age from your date of birth — years, months, days, total days lived, and days left until your next birthday. Free, instant, no sign-up.">
+<meta property="og:url" content="https://toolbench-site.vercel.app/age-calculator.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Age Calculator Online — Find Exact Age in Years, Months, Days">
+<meta name="twitter:description" content="Calculate your exact age from your date of birth — years, months, days, total days lived, and days left until your next birthday. Free, instant, no sign-up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is exact age calculated?","acceptedAnswer":{"@type":"Answer","text":"By counting the full years, months and days between your date of birth and today's date, accounting for different month lengths and leap years."}},
+{"@type":"Question","name":"Does this tool store my date of birth?","acceptedAnswer":{"@type":"Answer","text":"No. The calculation runs entirely in your browser — nothing is sent to or saved on any server."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" style="text-decoration:none;">Tool<span>Bench</span></a>
+  </div>
+  <nav>
+    <a class="tab" href="index.html">Home</a>
+    <a class="tab active" href="age-calculator.html">Age Calculator</a>
+    <a class="tab" href="image-compressor.html">Image Compressor</a>
+    <a class="tab" href="pdf-merge.html">PDF Merge</a>
+    <a class="tab" href="word-counter.html">Word Counter</a>
+    <a class="tab" href="emi-calculator.html">EMI Calculator</a>
+    <a class="tab" href="percentage-calculator.html">Percentage Calculator</a>
+    <a class="tab" href="bmi-calculator.html">BMI Calculator</a>
+    <a class="tab" href="unit-converter.html">Unit Converter</a>
+    <a class="tab" href="qr-code-generator.html">QR Code Generator</a>
+    <a class="tab" href="ai-tools.html">Free AI Tools</a>
+    <a class="tab" href="books.html">Books</a>
+    <a class="tab" href="about.html">About Us</a>
+    <a class="tab" href="contact.html">Contact</a>
+    <a class="tab" href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <h1>Age Calculator</h1>
+  <p>Enter a date of birth below to see the exact age in years, months and days, along with total days lived and how many days remain until the next birthday.</p>
+</div>
+<div class="card">
+      <h2>Calculate your exact age</h2>
+      <p class="sub">Works for any past date — birthdays, anniversaries, or how old something is.</p>
+      <label for="dobInput">Date of birth</label>
+      <input type="date" id="dobInput">
+      <div style="margin-top:14px;">
+        <button class="primary" onclick="calcAge()">Calculate age</button>
+      </div>
+      <div class="result hidden" id="ageResult">
+        <div class="big" id="ageBig">—</div>
+        <div class="grid-stats">
+          <div class="stat"><div class="n" id="ageDays">—</div><div class="l">Total days lived</div></div>
+          <div class="stat"><div class="n" id="ageWeeks">—</div><div class="l">Total weeks</div></div>
+          <div class="stat"><div class="n" id="ageNext">—</div><div class="l">Days to next birthday</div></div>
+        </div>
+      </div>
+</div>
+<div class="faq"><h3>Frequently asked questions</h3><div class="q">How is exact age calculated?</div><div class="a">By counting the full years, months and days between your date of birth and today's date, accounting for different month lengths and leap years.</div>
+<div class="q">Does this tool store my date of birth?</div><div class="a">No. The calculation runs entirely in your browser — nothing is sent to or saved on any server.</div></div>
+<div class="ad-slot">Ad space — place your Google AdSense unit here once your site is approved</div>
+</main>
+<footer>
+  <div class="inner">
+    ToolBench — free browser-based utilities. No files are uploaded to any server; every tool runs locally on your device.<br>
+    <span style="margin-top:6px; display:inline-block;">
+      <a href="mailto:uzmadanish143786@gmail.com">Contact</a> ·
+      <a href="about.html">About</a> ·
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+<script>
+function calcAge(){
+  const val = document.getElementById('dobInput').value;
+  if(!val) return;
+  const dob = new Date(val);
+  const now = new Date();
+  if(dob > now) return;
+  let years = now.getFullYear() - dob.getFullYear();
+  let months = now.getMonth() - dob.getMonth();
+  let days = now.getDate() - dob.getDate();
+  if(days < 0){ months--; const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0); days += prevMonth.getDate(); }
+  if(months < 0){ years--; months += 12; }
+  const totalDays = Math.floor((now - dob) / 86400000);
+  const totalWeeks = Math.floor(totalDays / 7);
+  let nextBday = new Date(now.getFullYear(), dob.getMonth(), dob.getDate());
+  if(nextBday < now) nextBday.setFullYear(now.getFullYear()+1);
+  const daysToNext = Math.ceil((nextBday - now) / 86400000);
+  document.getElementById('ageResult').classList.remove('hidden');
+  document.getElementById('ageBig').textContent = `${years} years, ${months} months, ${days} days`;
+  document.getElementById('ageDays').textContent = totalDays.toLocaleString();
+  document.getElementById('ageWeeks').textContent = totalWeeks.toLocaleString();
+  document.getElementById('ageNext').textContent = daysToNext;
+}
+</script>
+</body>
+</html>

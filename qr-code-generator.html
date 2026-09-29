@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="XBWFq57IGj9rFUByLtACDu-FAbgvlOMMOUhL3YZyk5w" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978184215354434" crossorigin="anonymous"></script>
+<title>Free QR Code Generator Online — Create & Download QR Codes</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Turn any link or text into a scannable QR code for free. Generate instantly in your browser and download as an image — no sign-up needed.">
+<meta name="keywords" content="qr code generator, free qr code generator, create qr code online, qr code maker, generate qr code">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Uzma Danish">
+<link rel="canonical" href="https://toolbench-site.vercel.app/qr-code-generator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free QR Code Generator Online — Create & Download QR Codes">
+<meta property="og:description" content="Turn any link or text into a scannable QR code for free. Generate instantly in your browser and download as an image — no sign-up needed.">
+<meta property="og:url" content="https://toolbench-site.vercel.app/qr-code-generator.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free QR Code Generator Online — Create & Download QR Codes">
+<meta name="twitter:description" content="Turn any link or text into a scannable QR code for free. Generate instantly in your browser and download as an image — no sign-up needed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.0.3/qrcode.min.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does the QR code expire?","acceptedAnswer":{"@type":"Answer","text":"No. Once generated and downloaded, the QR code image works permanently, since it encodes your text or link directly."}},
+{"@type":"Question","name":"Can I use this for a business or menu QR code?","acceptedAnswer":{"@type":"Answer","text":"Yes — generate it, download the image, and print or share it anywhere you like, free of charge."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" style="text-decoration:none;">Tool<span>Bench</span></a>
+  </div>
+  <nav>
+    <a class="tab" href="index.html">Home</a>
+    <a class="tab" href="age-calculator.html">Age Calculator</a>
+    <a class="tab" href="image-compressor.html">Image Compressor</a>
+    <a class="tab" href="pdf-merge.html">PDF Merge</a>
+    <a class="tab" href="word-counter.html">Word Counter</a>
+    <a class="tab" href="emi-calculator.html">EMI Calculator</a>
+    <a class="tab" href="percentage-calculator.html">Percentage Calculator</a>
+    <a class="tab" href="bmi-calculator.html">BMI Calculator</a>
+    <a class="tab" href="unit-converter.html">Unit Converter</a>
+    <a class="tab active" href="qr-code-generator.html">QR Code Generator</a>
+    <a class="tab" href="ai-tools.html">Free AI Tools</a>
+    <a class="tab" href="books.html">Books</a>
+    <a class="tab" href="about.html">About Us</a>
+    <a class="tab" href="contact.html">Contact</a>
+    <a class="tab" href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <h1>QR Code Generator</h1>
+  <p>Turn any link or text into a scannable QR code, free to download. Everything is generated locally in your browser.</p>
+</div>
+<div class="card">
+      <h2>Generate a QR code</h2>
+      <label for="qrInput">Text or URL</label>
+      <input type="text" id="qrInput" placeholder="https://example.com" oninput="generateQR()">
+      <div id="qrOutput" style="margin-top:18px; text-align:center;"></div>
+      <a class="dl hidden" id="qrDownload" download="qrcode.png">Download QR code</a>
+</div>
+<div class="faq"><h3>Frequently asked questions</h3><div class="q">Does the QR code expire?</div><div class="a">No. Once generated and downloaded, the QR code image works permanently, since it encodes your text or link directly.</div>
+<div class="q">Can I use this for a business or menu QR code?</div><div class="a">Yes — generate it, download the image, and print or share it anywhere you like, free of charge.</div></div>
+<div class="ad-slot">Ad space — place your Google AdSense unit here once your site is approved</div>
+</main>
+<footer>
+  <div class="inner">
+    ToolBench — free browser-based utilities. No files are uploaded to any server; every tool runs locally on your device.<br>
+    <span style="margin-top:6px; display:inline-block;">
+      <a href="mailto:uzmadanish143786@gmail.com">Contact</a> ·
+      <a href="about.html">About</a> ·
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+<script>
+function generateQR(){
+  const text = document.getElementById('qrInput').value.trim();
+  const out = document.getElementById('qrOutput');
+  const dl = document.getElementById('qrDownload');
+  out.innerHTML = '';
+  if(!text){ dl.classList.add('hidden'); return; }
+  let qr = null;
+  for(let type = 1; type <= 40; type++){
+    try{
+      const attempt = qrcode(type, 'M');
+      attempt.addData(text);
+      attempt.make();
+      qr = attempt;
+      break;
+    }catch(e){ /* try next size */ }
+  }
+  if(!qr){
+    out.textContent = 'Text is too long for a QR code — try something shorter.';
+    dl.classList.add('hidden');
+    return;
+  }
+  out.innerHTML = qr.createImgTag(6, 8);
+  const img = out.querySelector('img');
+  dl.href = img.src;
+  dl.classList.remove('hidden');
+}
+</script>
+</body>
+</html>

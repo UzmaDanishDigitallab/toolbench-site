@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="XBWFq57IGj9rFUByLtACDu-FAbgvlOMMOUhL3YZyk5w" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978184215354434" crossorigin="anonymous"></script>
+<title>Free Percentage Calculator Online — % of a Number, % Change</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Solve three common percentage questions instantly: what is X% of Y, X is what percent of Y, and percentage increase or decrease from X to Y.">
+<meta name="keywords" content="percentage calculator, percent calculator online, percentage increase calculator, percentage decrease, calculate percentage">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Uzma Danish">
+<link rel="canonical" href="https://toolbench-site.vercel.app/percentage-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Percentage Calculator Online — % of a Number, % Change">
+<meta property="og:description" content="Solve three common percentage questions instantly: what is X% of Y, X is what percent of Y, and percentage increase or decrease from X to Y.">
+<meta property="og:url" content="https://toolbench-site.vercel.app/percentage-calculator.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Percentage Calculator Online — % of a Number, % Change">
+<meta name="twitter:description" content="Solve three common percentage questions instantly: what is X% of Y, X is what percent of Y, and percentage increase or decrease from X to Y.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" style="text-decoration:none;">Tool<span>Bench</span></a>
+  </div>
+  <nav>
+    <a class="tab" href="index.html">Home</a>
+    <a class="tab" href="age-calculator.html">Age Calculator</a>
+    <a class="tab" href="image-compressor.html">Image Compressor</a>
+    <a class="tab" href="pdf-merge.html">PDF Merge</a>
+    <a class="tab" href="word-counter.html">Word Counter</a>
+    <a class="tab" href="emi-calculator.html">EMI Calculator</a>
+    <a class="tab active" href="percentage-calculator.html">Percentage Calculator</a>
+    <a class="tab" href="bmi-calculator.html">BMI Calculator</a>
+    <a class="tab" href="unit-converter.html">Unit Converter</a>
+    <a class="tab" href="qr-code-generator.html">QR Code Generator</a>
+    <a class="tab" href="ai-tools.html">Free AI Tools</a>
+    <a class="tab" href="books.html">Books</a>
+    <a class="tab" href="about.html">About Us</a>
+    <a class="tab" href="contact.html">Contact</a>
+    <a class="tab" href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <h1>Percentage Calculator</h1>
+  <p>Three of the most common percentage questions, solved instantly — no formulas to remember.</p>
+</div>
+<div class="card">
+      <h2>What is X% of Y?</h2>
+      <div class="row">
+        <input type="number" id="p1x" placeholder="X (e.g. 15)">
+        <input type="number" id="p1y" placeholder="Y (e.g. 200)">
+      </div>
+      <div class="result" id="p1Result" style="margin-bottom:24px;">Answer: —</div>
+
+      <h2 style="font-size:1.1rem;">X is what percent of Y?</h2>
+      <div class="row">
+        <input type="number" id="p2x" placeholder="X (e.g. 30)">
+        <input type="number" id="p2y" placeholder="Y (e.g. 120)">
+      </div>
+      <div class="result" id="p2Result" style="margin-bottom:24px;">Answer: —</div>
+
+      <h2 style="font-size:1.1rem;">Percentage increase / decrease from X to Y</h2>
+      <div class="row">
+        <input type="number" id="p3x" placeholder="From (e.g. 80)">
+        <input type="number" id="p3y" placeholder="To (e.g. 100)">
+      </div>
+      <div class="result" id="p3Result">Answer: —</div>
+</div>
+
+<div class="ad-slot">Ad space — place your Google AdSense unit here once your site is approved</div>
+</main>
+<footer>
+  <div class="inner">
+    ToolBench — free browser-based utilities. No files are uploaded to any server; every tool runs locally on your device.<br>
+    <span style="margin-top:6px; display:inline-block;">
+      <a href="mailto:uzmadanish143786@gmail.com">Contact</a> ·
+      <a href="about.html">About</a> ·
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+<script>
+function livePercent(){
+  const x1 = parseFloat(document.getElementById('p1x').value);
+  const y1 = parseFloat(document.getElementById('p1y').value);
+  document.getElementById('p1Result').textContent = (isNaN(x1)||isNaN(y1)) ? 'Answer: —' : `Answer: ${(x1/100*y1).toLocaleString(undefined,{maximumFractionDigits:2})}`;
+  const x2 = parseFloat(document.getElementById('p2x').value);
+  const y2 = parseFloat(document.getElementById('p2y').value);
+  document.getElementById('p2Result').textContent = (isNaN(x2)||isNaN(y2)||y2===0) ? 'Answer: —' : `Answer: ${(x2/y2*100).toLocaleString(undefined,{maximumFractionDigits:2})}%`;
+  const x3 = parseFloat(document.getElementById('p3x').value);
+  const y3 = parseFloat(document.getElementById('p3y').value);
+  if(isNaN(x3)||isNaN(y3)||x3===0){ document.getElementById('p3Result').textContent = 'Answer: —'; }
+  else{
+    const change = (y3-x3)/x3*100;
+    const dir = change >= 0 ? 'increase' : 'decrease';
+    document.getElementById('p3Result').textContent = `Answer: ${Math.abs(change).toLocaleString(undefined,{maximumFractionDigits:2})}% ${dir}`;
+  }
+}
+['p1x','p1y','p2x','p2y','p3x','p3y'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', livePercent);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="XBWFq57IGj9rFUByLtACDu-FAbgvlOMMOUhL3YZyk5w" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8978184215354434" crossorigin="anonymous"></script>
+<title>Free Image Compressor Online — Reduce JPG & PNG File Size</title>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Compress JPG or PNG images online for free. Reduce file size before uploading or sharing, with an adjustable quality slider. Runs in your browser — no upload to any server.">
+<meta name="keywords" content="image compressor, compress image online, reduce image size, jpg compressor, png compressor free">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Uzma Danish">
+<link rel="canonical" href="https://toolbench-site.vercel.app/image-compressor.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Image Compressor Online — Reduce JPG & PNG File Size">
+<meta property="og:description" content="Compress JPG or PNG images online for free. Reduce file size before uploading or sharing, with an adjustable quality slider. Runs in your browser — no upload to any server.">
+<meta property="og:url" content="https://toolbench-site.vercel.app/image-compressor.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Image Compressor Online — Reduce JPG & PNG File Size">
+<meta name="twitter:description" content="Compress JPG or PNG images online for free. Reduce file size before uploading or sharing, with an adjustable quality slider. Runs in your browser — no upload to any server.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my image uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. The compression happens locally in your browser using the HTML canvas — your image file never leaves your device."}},
+{"@type":"Question","name":"Will compressing reduce image quality?","acceptedAnswer":{"@type":"Answer","text":"A small amount, controlled by the quality slider. Lower quality means a smaller file; you can preview the result before downloading."}}]}
+</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="brand" href="index.html" style="text-decoration:none;">Tool<span>Bench</span></a>
+  </div>
+  <nav>
+    <a class="tab" href="index.html">Home</a>
+    <a class="tab" href="age-calculator.html">Age Calculator</a>
+    <a class="tab active" href="image-compressor.html">Image Compressor</a>
+    <a class="tab" href="pdf-merge.html">PDF Merge</a>
+    <a class="tab" href="word-counter.html">Word Counter</a>
+    <a class="tab" href="emi-calculator.html">EMI Calculator</a>
+    <a class="tab" href="percentage-calculator.html">Percentage Calculator</a>
+    <a class="tab" href="bmi-calculator.html">BMI Calculator</a>
+    <a class="tab" href="unit-converter.html">Unit Converter</a>
+    <a class="tab" href="qr-code-generator.html">QR Code Generator</a>
+    <a class="tab" href="ai-tools.html">Free AI Tools</a>
+    <a class="tab" href="books.html">Books</a>
+    <a class="tab" href="about.html">About Us</a>
+    <a class="tab" href="contact.html">Contact</a>
+    <a class="tab" href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+<main>
+<div class="hero">
+  <h1>Image Compressor</h1>
+  <p>Shrink a JPG or PNG's file size right in your browser before uploading or sharing it. Nothing leaves your device — the compression happens locally using your browser's canvas.</p>
+</div>
+<div class="card">
+      <h2>Compress an image</h2>
+      <p class="sub">Choose an image, then adjust the quality slider to control file size.</p>
+      <div class="dropzone" id="imgDrop" tabindex="0">
+        <strong>Click to choose an image</strong> or drag one here<br>JPG or PNG
+        <input type="file" id="imgInput" accept="image/png, image/jpeg" class="hidden">
+      </div>
+      <div class="range-slider hidden" id="qualityWrap">
+        <label>Quality: <span id="qualityVal">70</span>%</label>
+        <input type="range" id="qualityRange" min="10" max="95" value="70">
+      </div>
+      <div class="previewgrid hidden" id="imgPreviewGrid">
+        <div class="previewbox">
+          <img id="origPreview" alt="Original image">
+          <div class="size">Original: <span id="origSize">—</span></div>
+        </div>
+        <div class="previewbox">
+          <img id="compPreview" alt="Compressed image">
+          <div class="size">Compressed: <span id="compSize">—</span></div>
+          <a class="dl" id="imgDownload" download="compressed.jpg">Download compressed image</a>
+        </div>
+      </div>
+</div>
+<div class="faq"><h3>Frequently asked questions</h3><div class="q">Is my image uploaded anywhere?</div><div class="a">No. The compression happens locally in your browser using the HTML canvas — your image file never leaves your device.</div>
+<div class="q">Will compressing reduce image quality?</div><div class="a">A small amount, controlled by the quality slider. Lower quality means a smaller file; you can preview the result before downloading.</div></div>
+<div class="ad-slot">Ad space — place your Google AdSense unit here once your site is approved</div>
+</main>
+<footer>
+  <div class="inner">
+    ToolBench — free browser-based utilities. No files are uploaded to any server; every tool runs locally on your device.<br>
+    <span style="margin-top:6px; display:inline-block;">
+      <a href="mailto:uzmadanish143786@gmail.com">Contact</a> ·
+      <a href="about.html">About</a> ·
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+<script>
+const imgDrop = document.getElementById('imgDrop');
+const imgInput = document.getElementById('imgInput');
+let currentImgFile = null;
+imgDrop.addEventListener('click', ()=> imgInput.click());
+imgDrop.addEventListener('keydown', e=>{ if(e.key==='Enter') imgInput.click(); });
+;['dragover','dragleave','drop'].forEach(evt=>{
+  imgDrop.addEventListener(evt, e=>{
+    e.preventDefault();
+    imgDrop.classList.toggle('drag', evt==='dragover');
+    if(evt==='drop' && e.dataTransfer.files.length) handleImgFile(e.dataTransfer.files[0]);
+  });
+});
+imgInput.addEventListener('change', e=>{ if(e.target.files.length) handleImgFile(e.target.files[0]); });
+document.getElementById('qualityRange').addEventListener('input', e=>{
+  document.getElementById('qualityVal').textContent = e.target.value;
+  if(currentImgFile) compressImage(currentImgFile, e.target.value/100);
+});
+function handleImgFile(file){
+  if(!file.type.startsWith('image/')) return;
+  currentImgFile = file;
+  document.getElementById('qualityWrap').classList.remove('hidden');
+  document.getElementById('imgPreviewGrid').classList.remove('hidden');
+  const url = URL.createObjectURL(file);
+  document.getElementById('origPreview').src = url;
+  document.getElementById('origSize').textContent = formatBytes(file.size);
+  compressImage(file, document.getElementById('qualityRange').value/100);
+}
+function compressImage(file, quality){
+  const img = new Image();
+  img.onload = ()=>{
+    const canvas = document.createElement('canvas');
+    let w = img.width, h = img.height;
+    const maxDim = 2000;
+    if(w > maxDim || h > maxDim){
+      const scale = maxDim / Math.max(w,h);
+      w = Math.round(w*scale); h = Math.round(h*scale);
+    }
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, w, h);
+    canvas.toBlob(blob=>{
+      const url = URL.createObjectURL(blob);
+      document.getElementById('compPreview').src = url;
+      document.getElementById('compSize').textContent = formatBytes(blob.size);
+      const dl = document.getElementById('imgDownload');
+      dl.href = url;
+      dl.download = 'compressed.jpg';
+    }, 'image/jpeg', quality);
+  };
+  img.src = URL.createObjectURL(file);
+}
+function formatBytes(bytes){
+  if(bytes < 1024) return bytes + ' B';
+  if(bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/(1024*1024)).toFixed(2) + ' MB';
+}
+</script>
+</body>
+</html>
